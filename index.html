@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Random String with Hint</title>
+    <title>Random Riddle with Hint</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body { 
             font-family: Arial, sans-serif; 
             text-align: center; 
-            margin-top: 100px; 
-            padding: 0 20px;
+            margin-top: 50px; 
+            padding: 0 10px;
             background-color: #f9f9f9;
         }
         h1 { 
-            font-size: 24vw;  /* Scales with screen width */
+            font-size: 6vw;  
             color: #333; 
             margin: 20px 0; 
             word-break: break-word;
         }
         h3 { 
-            font-size: 20vw;  /* Scales with screen width */
+            font-size: 4vw;  
             color: #666; 
             margin-top: 15px; 
             word-break: break-word;
         }
         button { 
-            font-size: 15vw; 
+            font-size: 5vw; 
             padding: 15px 25px; 
             margin-top: 25px; 
             cursor: pointer; 
@@ -34,17 +34,17 @@
             color: white;
         }
         #timer { 
-            font-size: 10vw; 
+            font-size: 5vw; 
             margin-top: 20px; 
             color: #ff0000; 
         }
     </style>
 </head>
 <body>
-    <h1 id="random-string"></h1>
+    <h1 id="riddle"></h1>
     <h3 id="hint"></h3>
     <div id="timer">01:00</div>
-    <button onclick="showRandomString()">Get Another String</button>
+    <button onclick="showRiddle()">Next Riddle</button>
 
     <script>
         // List of riddles with hints
@@ -63,12 +63,12 @@
 
         let timerInterval;
 
-        function showRandomString() {
-            const randomIndex = Math.floor(Math.random() * items.length);
-            const item = items[randomIndex];
+        function showRiddle() {
+            const randomIndex = Math.floor(Math.random() * riddles.length);
+            const riddle = riddles[randomIndex];
 
-            document.getElementById('random-string').innerText = item.str;
-            document.getElementById('hint').innerText = "Hint: " + item.hint;
+            document.getElementById('riddle').innerText = riddle.str;
+            document.getElementById('hint').innerText = "Hint: " + riddle.hint;
 
             startTimer(60);
         }
@@ -84,7 +84,7 @@
 
                 if (remaining <= 0) {
                     clearInterval(timerInterval);
-                    showRandomString();
+                    showRiddle(); // Show new riddle automatically
                 } else {
                     remaining--;
                 }
@@ -94,10 +94,12 @@
             timerInterval = setInterval(updateTimer, 1000);
         }
 
-        showRandomString();
+        // Show first riddle on page load
+        showRiddle();
     </script>
 </body>
 </html>
+
 
 
 
