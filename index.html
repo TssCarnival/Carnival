@@ -7,20 +7,20 @@
         body { 
             font-family: Arial, sans-serif; 
             text-align: center; 
-            margin-top: 50px; 
-            padding: 0 10px;
-            background-color: #f9f9f9;
+            margin: 0; 
+            padding: 20px; 
+            background-color: #f9f9f9; 
         }
         h1 { 
-            font-size: 6vw;  
+            font-size: 8vw;  /* scales on all devices */
             color: #333; 
             margin: 20px 0; 
             word-break: break-word;
         }
         h3 { 
-            font-size: 4vw;  
+            font-size: 5vw;  
             color: #666; 
-            margin-top: 15px; 
+            margin: 15px 0; 
             word-break: break-word;
         }
         button { 
@@ -38,6 +38,12 @@
             margin-top: 20px; 
             color: #ff0000; 
         }
+        @media (min-width: 768px) {
+            h1 { font-size: 50px; }
+            h3 { font-size: 30px; }
+            button { font-size: 25px; padding: 15px 40px; }
+            #timer { font-size: 25px; }
+        }
     </style>
 </head>
 <body>
@@ -47,7 +53,6 @@
     <button onclick="showRiddle()">Next Riddle</button>
 
     <script>
-        // List of riddles with hints
         const riddles = [
             { str: "I have teeth but cannot bite", hint: "Used for grooming your hair" },
             { str: "I have keys but open no locks", hint: "Found on a piano" },
@@ -84,7 +89,7 @@
 
                 if (remaining <= 0) {
                     clearInterval(timerInterval);
-                    showRiddle(); // Show new riddle automatically
+                    showRiddle();
                 } else {
                     remaining--;
                 }
@@ -94,7 +99,6 @@
             timerInterval = setInterval(updateTimer, 1000);
         }
 
-        // Show first riddle on page load
         showRiddle();
     </script>
 </body>
