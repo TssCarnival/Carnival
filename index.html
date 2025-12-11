@@ -2,12 +2,42 @@
 <html>
 <head>
     <title>Random String with Hint</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body { font-family: Arial; text-align: center; margin-top: 50px; }
-        h1 { font-size: 3em; color: #333; }
-        h3 { font-size: 1.5em; color: #666; margin-top: 20px; }
-        button { font-size: 1.2em; padding: 10px 20px; margin-top: 20px; cursor: pointer; }
-        #timer { font-size: 1.2em; margin-top: 20px; color: #ff0000; }
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            margin-top: 50px; 
+            padding: 0 10px;
+            background-color: #f9f9f9;
+        }
+        h1 { 
+            font-size: 6vw;  /* Scales with screen width */
+            color: #333; 
+            margin: 20px 0; 
+            word-break: break-word;
+        }
+        h3 { 
+            font-size: 4vw;  /* Scales with screen width */
+            color: #666; 
+            margin-top: 15px; 
+            word-break: break-word;
+        }
+        button { 
+            font-size: 5vw; 
+            padding: 15px 25px; 
+            margin-top: 25px; 
+            cursor: pointer; 
+            border-radius: 10px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+        }
+        #timer { 
+            font-size: 5vw; 
+            margin-top: 20px; 
+            color: #ff0000; 
+        }
     </style>
 </head>
 <body>
@@ -17,7 +47,6 @@
     <button onclick="showRandomString()">Get Another String</button>
 
     <script>
-        // Array of strings with associated hints
         const items = [
             { str: "Hello123", hint: "A simple greeting with numbers" },
             { str: "PythonRocks", hint: "Programming language + enthusiasm" },
@@ -29,20 +58,17 @@
         let timerInterval;
 
         function showRandomString() {
-            // Pick a random item
             const randomIndex = Math.floor(Math.random() * items.length);
             const item = items[randomIndex];
 
-            // Display string and hint
             document.getElementById('random-string').innerText = item.str;
             document.getElementById('hint').innerText = "Hint: " + item.hint;
 
-            // Reset timer to 1 minute
             startTimer(60);
         }
 
         function startTimer(seconds) {
-            clearInterval(timerInterval); // Stop any existing timer
+            clearInterval(timerInterval);
             let remaining = seconds;
 
             function updateTimer() {
@@ -52,7 +78,7 @@
 
                 if (remaining <= 0) {
                     clearInterval(timerInterval);
-                    showRandomString(); // Show a new random string when timer ends
+                    showRandomString();
                 } else {
                     remaining--;
                 }
@@ -62,10 +88,11 @@
             timerInterval = setInterval(updateTimer, 1000);
         }
 
-        // Show first random string on page load
         showRandomString();
     </script>
 </body>
 </html>
+
+
 
 
