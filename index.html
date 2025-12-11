@@ -12,16 +12,16 @@
             background-color: #f9f9f9; 
         }
         h1 { 
-            font-size: 8vw;  /* scales on all devices */
+            font-size: 8vw;  
             color: #333; 
             margin: 20px 0; 
-            word-break: break-word;
+            word-wrap: break-word;
         }
         h3 { 
             font-size: 5vw;  
             color: #666; 
             margin: 15px 0; 
-            word-break: break-word;
+            word-wrap: break-word;
         }
         button { 
             font-size: 5vw; 
@@ -47,10 +47,10 @@
     </style>
 </head>
 <body>
-    <h1 id="riddle"></h1>
+    <h1 id="riddle">Loading...</h1>
     <h3 id="hint"></h3>
     <div id="timer">01:00</div>
-    <button onclick="showRiddle()">Next Riddle</button>
+    <button id="nextBtn">Next Riddle</button>
 
     <script>
         const riddles = [
@@ -99,7 +99,10 @@
             timerInterval = setInterval(updateTimer, 1000);
         }
 
-        showRiddle();
+        document.getElementById('nextBtn').addEventListener('click', showRiddle);
+
+        // Show first riddle when page loads
+        window.onload = showRiddle;
     </script>
 </body>
 </html>
