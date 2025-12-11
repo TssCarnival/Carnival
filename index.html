@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random String</title>
+    <style>
+        body { font-family: Arial; text-align: center; margin-top: 50px; }
+        h1 { font-size: 3em; color: #333; }
+        button { font-size: 1.5em; padding: 10px 20px; margin-top: 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1 id="random-string"></h1>
+    <button onclick="showRandomString()">Get Another String</button>
+
+    <script>
+        const strings = ["Hello123", "PythonRocks", "OpenAI2025", "RandomString", "ChatGPT"];
+
+        function showRandomString() {
+            const randomIndex = Math.floor(Math.random() * strings.length);
+            document.getElementById('random-string').innerText = strings[randomIndex];
+        }
+
+        // Show a random string on page load
+        showRandomString();
+    </script>
+</body>
+</html>
