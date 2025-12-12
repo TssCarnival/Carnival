@@ -52,19 +52,32 @@
     <div id="timer">01:00</div>
     <button id="nextBtn">Next Riddle</button>
 
-    <script>
-        const riddles = [
-            { str: "I have teeth but cannot bite", hint: "Used for grooming your hair" },
-            { str: "I have keys but open no locks", hint: "Found on a piano" },
-            { str: "I am small, sharp and used to hold things together", hint: "Stationery item for papers" },
-            { str: "I have a point but I am not sharp, You use me everyday", hint: "Something you write with" },
-            { str: "I make marks but disappear when you rub me", hint: "Used for writing mistakes" },
-            { str: "I can fit in your hand and show you the world", hint: "Used for navigation and maps" },
-            { str: "I am round, shiny and used for paint", hint: "Paint tool often round and colorful" },
-            { str: "I stay in 1 place but travel all over paper", hint: "Stationery tool that leaves ink marks" },
-            { str: "I can open bottles but I am not a key", hint: "Used in kitchens to open drinks" },
-            { str: "I have a lid and hold your secrets or tiny things", hint: "A small container or jar" }
-        ];
+<script>
+    const riddles = [
+        // --- FIRST SET ---
+        { str: "I speak without a mouth and hear without ears…", hint: "You can hear it in caves or mountains when sound bounces back." },
+        { str: "The more you take, the more you leave behind.", hint: "You make these when you walk on soft ground." },
+        { str: "I’m not alive, but I grow… water kills me.", hint: "You can start it with a spark, but rain stops it." },
+        { str: "Cities, mountains, and rivers but no people.", hint: "You can fold it and carry the whole world in your hand." },
+        { str: "Fills a room but takes up no space.", hint: "You need it to see anything." },
+        { str: "Branches but no leaves, trunk but no bark.", hint: "It’s a place where you might keep money." },
+        { str: "Disappears the moment you say its name.", hint: "You break it every time you talk." },
+        { str: "Building with the most stories.", hint: "It’s full of books." },
+        { str: "Seen in water but never gets wet.", hint: "It copies what’s in front of it." },
+        { str: "Has one eye but cannot see.", hint: "It’s used for sewing." },
+
+        // --- SECOND SET ---
+        { str: "I’m always in front of you, but can’t be seen.", hint: "You can plan for me, but never catch me." },
+        { str: "The more of me there is, the less you see.", hint: "I appear at night or in dark places." },
+        { str: "I have keys but no locks, space but no room, and you can enter but not go outside.", hint: "You use me every day with computers." },
+        { str: "I’m not alive, but I grow. I don’t have lungs, but I need air. I don’t have a mouth, but water kills me.", hint: "People light me for warmth or cooking." },
+        { str: "I have a neck but no head, two arms but cannot hug, and I wear clothes.", hint: "You see me in shops or closets." },
+        { str: "Forward I am heavy, backward I am not.", hint: "Think about the letters in the word." },
+        { str: "I can fly without wings. I cry without eyes. Wherever I go, darkness flies.", hint: "You see me in the sky during the day." },
+        { str: "I go up and down, but always stay in place.", hint: "People use me inside buildings to move between floors." },
+        { str: "The more you take from me, the bigger I get.", hint: "I appear when digging or removing material." },
+        { str: "I’m always moving but never walk. I have a bed but never sleep.", hint: "I’m found in nature and cities, carrying water." }
+    ];
 
         let timerInterval;
 
@@ -106,3 +119,4 @@
     </script>
 </body>
 </html>
+
